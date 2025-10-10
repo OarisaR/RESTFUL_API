@@ -1,0 +1,102 @@
+// This is a simple log file that helps us to track what requests are made!
+
+
+1759721258965: " GET : /api/users
+
+1759721280969: " GET : /api/users/455
+
+1759721299149: " POST : /api/users/455
+
+1759721318018: " POST : /api/users
+
+1759742942079: " POST : /api/users
+
+1759743372592: " POST : /api/users
+
+1759743562531: " GET : /api/users/8000
+
+1759743595848: " GET : /api/users/800
+
+1759743599849: " GET : /api/users/80
+
+1760031842415: " GET : /api/users
+
+1760031842503: " GET : /favicon.ico
+
+1760031849295: " GET : /.well-known/appspecific/com.chrome.devtools.json
+
+1760031857180: " GET : /
+
+1760031991083: " GET : /
+
+1760032920562: " POST : /api/users
+
+1760032980057: " POST : /api/users
+
+1760032984307: " POST : /api/users
+
+1760033009847: " POST : /api/users
+
+1760033089730: " POST : /api/users
+
+1760033122644: " POST : /api/users
+
+1760033160473: " POST : /api/users
+
+1760033263531: " POST : /api/users
+
+1760033335377: " POST : /api/users
+
+1760033463841: " POST : /api/users
+
+1760033851159: " GET : /api/users
+
+1760033851274: " GET : /favicon.ico
+
+1760033862723: " GET : /users
+
+1760033882340: " GET : /users
+
+1760033909589: " POST : /api/users
+
+1760033913468: " GET : /users
+
+1760033992452: " GET : /api/users
+
+1760034052772: " GET : /api/users
+
+1760034141448: " GET : /api/users/68e7fc7579ff0802ff41b27e
+
+1760034591168: " PATCH : /api/users/68e7fc7579ff0802ff41b27e
+
+1760034617337: " PATCH : /api/users/68e7fc7579ff0802ff41b27e
+
+1760034625345: " GET : /users
+
+1760034727114: " DELETE : /api/users/68e7fc7579ff0802ff41b27e
+
+1760034732908: " GET : /users
+
+1760034789469: " POST : /api/users
+
+1760034860466: " POST : /api/users
+
+1760034864743: " GET : /users
+
+1760070944396: " GET : /api/users
+
+1760070956571: " GET : /
+
+1760071178726: " GET : /
+
+1760071182877: " GET : /user
+
+1760071195175: " GET : /api/user
+
+1760071198674: " GET : /user
+
+1760071357852: " GET : /api/user
+
+1760071629223: " POST : /api/users
+
+1760071638220: " GET : /api/users

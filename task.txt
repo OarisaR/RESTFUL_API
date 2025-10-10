@@ -1,0 +1,98 @@
+## REST API of JSON Type
+
+When building a REST API, the main idea is that the server communicates with clients (browser, mobile app, etc.) via JSON data, not HTML.
+Browsers can render HTML, but mobile apps cannot, so we need dedicated JSON endpoints.
+
+Example Endpoints
+
+List all users
+
+GET /users        → renders HTML (for browsers)
+GET /api/users    → returns JSON (for apps & browser)
+
+
+Get a single user
+
+GET /users/1      → renders HTML
+GET /api/users/1  → returns JSON
+
+
+Note: /1 is a dynamic path parameter (we don’t hardcode it in practice).
+
+Create a new user
+
+POST /api/users
+
+
+Body contains user data in JSON.
+
+Update an existing user
+
+PATCH /api/users/:id
+
+
+:id is a dynamic variable (example: /api/users/1 updates user with ID 1).
+
+-----------------------------------------------------
+Delete a user
+
+DELETE /api/users/:id
+
+Dynamic Path Parameters
+
+Syntax: :parameterName
+
+Example: /api/users/:id
+
+When request comes in:
+
+/api/users/5 → id = 5
+
+/api/users/23 → id = 23
+
+These parameters allow your API to handle requests without hardcoding every ID.
+
+Hardcoded Data for Practice
+
+For learning, we hardcode user data instead of connecting a real database.
+
+Tools like Mockaroo can generate fake user data in JSON format:
+
+[
+  { "id": 1, "name": "Alice", "email": "alice@example.com" },
+  { "id": 2, "name": "Bob", "email": "bob@example.com" }
+]
+------------------------------------------------------------
+Schema & Model
+
+Schema
+
+Defines the structure of your data.
+
+Example fields for a User:
+
+{
+  id: Number,
+  name: String,
+  email: String,
+  age: Number
+}
+
+
+Model
+
+A model is created from a schema.
+The model name is lowercase + singular, and the database name is plural.
+Example:
+
+Model name: user
+Database name: users
+Models handle CRUD operations:
+
+C → Create
+
+R → Read
+
+U → Update
+
+D → Delete
