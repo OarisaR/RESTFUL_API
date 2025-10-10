@@ -1,98 +1,128 @@
-## REST API of JSON Type
+# REST API of JSON Type
 
-When building a REST API, the main idea is that the server communicates with clients (browser, mobile app, etc.) via JSON data, not HTML.
+When building a REST API, the main idea is that the server communicates with clients (browser, mobile app, etc.) via **JSON data**, not HTML.
 Browsers can render HTML, but mobile apps cannot, so we need dedicated JSON endpoints.
 
-Example Endpoints
+---
 
-List all users
+## Example Endpoints
 
+### 1. List all users
+
+```http
 GET /users        → renders HTML (for browsers)
 GET /api/users    → returns JSON (for apps & browser)
+```
 
+### 2. Get a single user
 
-Get a single user
-
+```http
 GET /users/1      → renders HTML
 GET /api/users/1  → returns JSON
+```
 
+> **Note:** `/1` is a dynamic path parameter (we don’t hardcode it in practice).
 
-Note: /1 is a dynamic path parameter (we don’t hardcode it in practice).
+### 3. Create a new user
 
-Create a new user
-
+```http
 POST /api/users
-
+```
 
 Body contains user data in JSON.
 
-Update an existing user
+### 4. Update an existing user
 
+```http
 PATCH /api/users/:id
+```
 
+* `:id` is a **dynamic variable** (example: `/api/users/1` updates user with ID 1).
 
-:id is a dynamic variable (example: /api/users/1 updates user with ID 1).
+### 5. Delete a user
 
------------------------------------------------------
-Delete a user
-
+```http
 DELETE /api/users/:id
+```
 
-Dynamic Path Parameters
+---
 
-Syntax: :parameterName
+## Dynamic Path Parameters
 
-Example: /api/users/:id
+* **Syntax:** `:parameterName`
+* **Example:** `/api/users/:id`
+* When request comes in:
 
-When request comes in:
+  * `/api/users/5` → `id = 5`
+  * `/api/users/23` → `id = 23`
 
-/api/users/5 → id = 5
+These parameters allow your API to handle requests **without hardcoding every ID**.
 
-/api/users/23 → id = 23
+---
 
-These parameters allow your API to handle requests without hardcoding every ID.
+## Hardcoded Data for Practice
 
-Hardcoded Data for Practice
+For learning, we can **hardcode user data** instead of connecting to a real database.
 
-For learning, we hardcode user data instead of connecting a real database.
+Tools like **Mockaroo** can generate fake user data in JSON format:
 
-Tools like Mockaroo can generate fake user data in JSON format:
-
+```json
 [
   { "id": 1, "name": "Alice", "email": "alice@example.com" },
   { "id": 2, "name": "Bob", "email": "bob@example.com" }
 ]
-------------------------------------------------------------
-Schema & Model
+```
 
-Schema
+---
 
-Defines the structure of your data.
+## Schema & Model
 
-Example fields for a User:
+### Schema
 
+Defines the **structure** of your data.
+
+**Example fields for a User:**
+
+```js
 {
   id: Number,
   name: String,
   email: String,
   age: Number
 }
+```
 
+### Model
 
-Model
+A **model** is created from a schema.
 
-A model is created from a schema.
-The model name is lowercase + singular, and the database name is plural.
-Example:
+* The **model name** is lowercase + singular.
+* The **database name** is plural.
 
-Model name: user
-Database name: users
-Models handle CRUD operations:
+**Example:**
 
-C → Create
+* Model name: `user`
+* Database name: `users`
 
-R → Read
+Models handle **CRUD operations**:
 
-U → Update
+* **C → Create**
+* **R → Read**
+* **U → Update**
+* **D → Delete
 
-D → Delete
+---
+
+## API Flow (User → Route → Controller → Model → DB)
+
+```
+User (Client: browser or app)
+    ↓ Sends request
+Route (routes)
+    ↓ Calls
+Controller (controllers)
+    ↓ Interacts with
+Model (models) → Database
+        ↑ Returns data
+    ↑ Controller sends JSON response back to User
+```
