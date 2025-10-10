@@ -12,7 +12,7 @@ const app = express();
 const PORT = 8000;
 
 //Connection
-connectDB("mongodb+srv://oarisa_user:7LLZM913GAKI1iJ6@userprofiles.ydczb9b.mongodb.net/?retryWrites=true&w=majority&appName=userProfiles")
+connectDB("********************")
 
 // Middlewares
 app.use(express.urlencoded({ extended: false })); // like plugin,this adds form data into body
@@ -175,4 +175,5 @@ app.listen(PORT, () => console.log(`Server is running at  ${PORT}`));
 //   });
 
 // // We use backticks to embed any variables or expressions inside a string
+
 
