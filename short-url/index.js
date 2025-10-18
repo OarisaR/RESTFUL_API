@@ -14,7 +14,7 @@ const PORT = 8001;
 
 const { connectDB } = require("./connection");
 connectDB(
-  "mongodb+srv://oarisa_user:7LLZM913GAKI1iJ6@userprofiles.ydczb9b.mongodb.net/?retryWrites=true&w=majority&appName=userProfiles"
+  "mongodb-url!!"
 )
   .then(() => console.log("MONGODB connected"))
   .catch((err) => console.log("Connection failed", err));
@@ -40,3 +40,4 @@ app.use("/", staticRouter);
 app.use("/user",userRoute);
 
 app.listen(PORT, () => console.log(`Server is running at ${PORT}`));
+
