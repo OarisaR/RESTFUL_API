@@ -12,7 +12,7 @@ const PORT = 8000;
 
 
 mongoose.connect(
-  'mongodb+srv://oarisa_user:7LLZM913GAKI1iJ6@blogify.ydczb9b.mongodb.net/blogify?retryWrites=true&w=majority'
+  'mongodb+srv://oarisa_user:********@blogify.ydczb9b.mongodb.net/blogify?retryWrites=true&w=majority'
 )
 .then(() => console.log("MONGODB CONNECTED"));
 
@@ -34,4 +34,5 @@ app.get('/',async (req,res)=>{
 });
 
 app.use('/user' , userRoute)
+
 app.use('/blog' , blogRoute)
